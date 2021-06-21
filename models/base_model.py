@@ -54,7 +54,7 @@ class BaseModel():
         the_dict = {}
         the_dict.update(self.__dict__)
         the_dict.update({'__class__':
-                          (str(type(self)).split('.')[-1]).split('\'')[0]})
+                         (str(type(self)).split('.')[-1]).split('\'')[0]})
         the_dict['created_at'] = self.created_at.isoformat()
         the_dict['updated_at'] = self.updated_at.isoformat()
         if '_sa_instance_state' in the_dict.keys():

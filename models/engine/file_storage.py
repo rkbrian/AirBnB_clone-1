@@ -59,10 +59,10 @@ class FileStorage:
     def delete(self, obj=None):
         """to delete obj from __objects if it is inside"""
         if obj:
-            for k, v in Filestorage.__objects.items():
+            for k, v in FileStorage.__objects.items():
                 if v == obj:
                     break
-            del Filestorage.__objects[k]
+            del FileStorage.__objects[k]
 
     def close(self):
         """improvement for Flask"""
