@@ -20,5 +20,14 @@ def hello_again():
     strict_slashes = False
     return 'HBNB'
 
+
+@app.route('/c/{}'.format(sometexts))
+def hello_again(sometexts):
+    """web application to listen on 0.0.0.0, port 5000"""
+
+    strict_slashes = False
+    alt_string = sometexts.replace('_', ' ')
+    return 'C {}'.format(alt_string)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
