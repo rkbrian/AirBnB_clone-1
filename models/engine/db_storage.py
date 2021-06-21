@@ -63,3 +63,7 @@ class DBStorage():
         new_sess = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(new_sess)
         self.__session = Session()
+
+    def close(self):
+        """improvement for Flask"""
+        self.__session.close()

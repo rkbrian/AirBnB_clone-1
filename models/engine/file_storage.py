@@ -63,3 +63,7 @@ class FileStorage:
                     del Filestorage.__objects[k]
                     break
             self.save()
+
+    def close(self):
+        """improvement for Flask"""
+        self.reload()
