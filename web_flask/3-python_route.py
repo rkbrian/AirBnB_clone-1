@@ -29,6 +29,7 @@ def cis_alwaysfun(text):
     alt_string = text.replace('_', ' ')
     return 'C {}'.format(alt_string)
 
+
 @app.route('/python/')
 @app.route('/python/<text>')
 def pythonis_cool(text='is cool'):
