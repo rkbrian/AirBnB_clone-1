@@ -7,26 +7,26 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_hbnb():
-    """web application to listen on 0.0.0.0, port 5000"""
+    """text hello hbnb!"""
 
     strict_slashes = False
-    return 'Hello, HBNB!'
+    return 'Hello HBNB!'
 
 
 @app.route('/hbnb')
 def hello_again():
-    """web application to listen on 0.0.0.0, port 5000"""
+    """text hbnb"""
 
     strict_slashes = False
     return 'HBNB'
 
 
-@app.route('/c/{}'.format(sometexts))
-def hello_again(sometexts):
-    """web application to listen on 0.0.0.0, port 5000"""
+@app.route('/c/<text>')
+def cis_alwaysfun(text):
+    """text c and something"""
 
     strict_slashes = False
-    alt_string = sometexts.replace('_', ' ')
+    alt_string = text.replace('_', ' ')
     return 'C {}'.format(alt_string)
 
 if __name__ == '__main__':

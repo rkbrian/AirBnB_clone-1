@@ -10,7 +10,7 @@ def hello_hbnb():
     """web application to listen on 0.0.0.0, port 5000"""
 
     strict_slashes = False
-    return 'Hello, HBNB!'
+    return 'Hello HBNB!'
 
 
 @app.route('/hbnb')
