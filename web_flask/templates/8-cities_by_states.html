@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>States</H1>
+        <UL>
+	{% for item in listate %}
+	    <LI>{{item[1]}}: <B>{{item[0]}}</B>
+	        <UL>
+		{% for stuff in item[2] %}
+		    <LI>{{stuff[1]}}: <B>{{stuff[0]}}</B></LI>
+		{% endfor %}
+		</UL>
+	    </LI>
+	{% endfor %}
+	</UL>
+    </BODY>
+</HTML>

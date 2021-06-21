@@ -8,21 +8,25 @@ app = Flask(__name__)
 
 
 @app.teardown_appcontext
-def closestorage():
+def closestorage(self):
     """remove the current SQLAlchemy Session"""
     storage.close()
 
 
-@app.route('/states_list')
-def statedisplay():
+@app.route('/cities_by_states')
+def citiesdisplay():
     """display HTML of a state"""
 
     strict_slashes = False
     listate = []
-    for v in storage.all(State).values():
-        listate.append((v.name, v.id))
+    for vst in storage.all(State).values():
+        listcity = []
+        for vci in vst.cities:
+            listcity.append((vci.name, vci.id))
+        listcity.sort(key=lambda ytuple: ytuple[0])
+        listate.append((vst.name, vst.id, listcity))
     listate.sort(key=lambda xtuple: xtuple[0])
-    return render_template('7-states_list.html', listate=listate)
+    return render_template('8-cities_by_states.html', listate=listate)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
