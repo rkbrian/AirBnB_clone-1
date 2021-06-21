@@ -63,7 +63,6 @@ class FileStorage:
                 if v == obj:
                     break
             del Filestorage.__objects[k]
-            self.save()
 
     def close(self):
         """improvement for Flask"""
